@@ -16,6 +16,16 @@ class reservation extends Controller
         }
     }
 
+    public function displaydayslots(){
+        $this->model = $this->model('reservation_mdl');
+        $data = json_decode(file_get_contents("php://input"));
+
+        $this->model->date = $data->date;
+        $data = $this->model->displaydayslots();
+
+        echo json_encode($data);
+    }
+
     public function reserve()
     {
         $this->model = $this->model('reservation_mdl');
@@ -26,11 +36,6 @@ class reservation extends Controller
         $this->model->uuid = $data->uuid;
 
         $this->model->reserve();
-        // if ($this->model->reserve()) {
-        //     echo 'yes';
-        // }else{
-        //     echo 'no';
-        // }
     }
 
     public function update()

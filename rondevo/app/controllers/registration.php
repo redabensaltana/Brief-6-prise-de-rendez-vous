@@ -13,9 +13,14 @@ class registration extends Controller{
         $this->model->lname = $data->lname;
         $this->model->bdate = $data->bdate;
         
-        $permitted_chars = $data->fname . "azertyuiopqsdfghjklmwxcvbn1234567890";
-        $this->model->uuid = substr(str_shuffle($permitted_chars), 0, 8);
+        $base_string = $data->fname . "azertyuiopqsdfghjklmwxcvbn1234567890";
+        $this->model->uuid = substr(str_shuffle($base_string), 0, 8);
 
         $this->model->register();
+        
+        //!maybe conflicts in naming
+        $data = [];
+        array_push($data,$this->model->uuid);
+        echo json_encode($data);
     }
 }

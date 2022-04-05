@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>Rondevo login</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    <section class="vh-100" style="background-image: linear-gradient(to bottom right, #98e9e1, rgb(200, 200, 200));">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                        <div class="card-body p-5">
+                            <h3 class="mb-5">Login</h3>
+
+                            <div class="form-outline mb-4">
+                                <input placeholder="please insert your uuid" type="text" id="uuid" class="form-control form-control-lg"/>
+                            </div>
+                            <div class="d-flex align-items-center mt-5 flex-column">
+                                <button class="btn btn-lg btn-block log-btn" style="font-weight: 500;color: rgb(46, 46, 46);" onclick="login()" >continue</button>
+                                <a href="./register.html" style="text-decoration: none;" class="mb-0 mt-3">register here</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+<style>
+     .log-btn{
+                background-color: #70edbd;
+                border-radius: 20px;
+                width: 150px;
+            }
+            .log-btn:hover{
+                background-color: #41f8b2;
+                box-shadow: 0px 0px 20px #41f8b2;
+            }
+</style>
+<script src="./login.js"></script>
+</html>

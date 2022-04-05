@@ -27,9 +27,22 @@ class reservation_mdl extends Connection
         return $reservations_arr;
     }
 
+    public function displaydayslots(){
+        $query1 = "SELECT slot FROM " . $this->table . " WHERE date='$this->date';"; 
+        $data = $this->connect()->query($query1);
+        $rows_num = $data->num_rows;
+        $unavailable_slots = [];
+        
+        if($rows_num > 0){
+            while ($row = $data->fetch_assoc()){
+                array_push($unavailable_slots, $row["slot"]);
+            }
+        }
+        return $unavailable_slots;
+    }
+
     public function reserve()
-    {
-        // $query = "INSERT INTO " . $this->table . " (date,slot,uuid) VALUES ('$date','$slot','$uuid');";
+    {  
         $query = "INSERT INTO " . $this->table . " (date,slot,uuid) VALUES ('$this->date','$this->slot','$this->uuid');";
         $this->connect()->query($query);
     }

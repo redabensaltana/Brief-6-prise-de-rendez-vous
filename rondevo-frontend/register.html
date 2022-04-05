@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>Rondevo registration</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="vh-100" style="background-image: linear-gradient(to bottom right, #98c9e9, rgb(200, 200, 200));">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                        <div class="card-body p-5">
+
+                            <h3 class="mb-5">Register</h3>
+
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="firstname">First name</label>
+                                <input type="text" id="fname" class="form-control form-control-lg"/>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="lastname">Last name</label>
+                                <input type="text" id="lname" class="form-control form-control-lg"/>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="bdate">Birth date</label>
+                                <input type="date" id="bdate" class="form-control form-control-lg"/>
+                            </div>
+                            <div class="d-flex align-items-center mt-5 flex-column">
+                                <button class="btn btn-lg btn-block regis-btn" style="font-weight: 500;color: rgb(46, 46, 46);" onclick="register()"  data-bs-toggle="modal" data-bs-target="#success">Register</button>
+                                <a href="./login.html" style="text-decoration: none;" class="mb-0 mt-5">login here</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img class="removable ms-2 mt-5" src="./graphic/undraw_medical_research_qg4d.svg" style="max-width: 500px;" alt=""> 
+            </div>
+        </div>
+    </section>
+    
+  
+<!-- Modal -->
+  <div class="pop-up modal fade" id="success" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-title">Welcome</h5>       
+          <!-- <button type="button" class="close btn-close" data-dismiss="modal" aria-label="Close">
+          </button> -->
+        </div>
+        <div class="modal-body">
+          You created your account successfully. Please keep this id so you can log in later :  
+          <span class="uuid fs-3">"</span>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+          <a href="./home.html">
+              <button type="button" class="btn btn-success">Continue</button>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div>
+  
+</body>
+    <style>
+         .regis-btn{
+                background-color: #f0aae4;
+                border-radius: 20px;
+                width: 150px;
+            }
+            .regis-btn:hover{
+                background-color: #ee6fd9;
+                box-shadow: 0px 0px 20px #df05bba1;
+            }
+
+        @media screen and (max-width: 1200px) {
+            .removable{
+                display: none;
+            }
+        }
+    </style>
+    <script src="./register.js"></script>
+</html>

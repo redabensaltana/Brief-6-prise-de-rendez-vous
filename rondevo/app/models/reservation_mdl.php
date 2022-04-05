@@ -41,6 +41,20 @@ class reservation_mdl extends Connection
         return $unavailable_slots;
     }
 
+    public function getuserreservation(){
+        $query = "SELECT id,date,slot FROM " . $this->table . " WHERE uuid='$this->uuid';"; 
+        $data = $this->connect()->query($query);
+        $rows_num = $data->num_rows;
+        $reservations = [];
+
+        if($rows_num > 0){
+            while ($row = $data->fetch_assoc()){
+                array_push($reservations, $row);
+            }
+        }
+        return $reservations;
+    }
+
     public function reserve()
     {  
         $query = "INSERT INTO " . $this->table . " (date,slot,uuid) VALUES ('$this->date','$this->slot','$this->uuid');";

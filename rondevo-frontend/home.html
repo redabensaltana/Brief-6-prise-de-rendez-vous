@@ -12,15 +12,17 @@
     <nav class="navbar navbar-light bg-light static-top">
         <div class="container">
             <a class="navbar-brand"><i class="fa-solid fa-table-list me-2"></i>Rondevo</a>
-            <div class="row">
-                <p class="col mb-0 d-flex align-items-center px-0">my id:</p>
-                <p class="col uuid mb-0 d-flex align-items-center ps-1"></p>
-                <button class="col btn rounded ms-4 d-flex align-items-center" style="background-color: #ffc6e2;" onclick="logout()">logout<i class="fas fa-sign-out-alt ms-2"></i></button>
+            <div>
+                <p class="uuid mb-0 d-flex align-items-center ps-1" style="font-weight: 500;">ID: </p>
+            </div>
+           
+            <div>
+                <button class="col btn rounded ms-4 d-flex align-items-center logout btn-sm" style="background-color: #e5e5e5;" onclick="logout()">logout<i class="fas fa-sign-out-alt ms-2"></i></button>
             </div>
         </div>
     </nav>
 
-    <!-- Main-->
+    <!-- reservation panel-->
     <section style="background-image: url(./img/bg-masthead.jpg);height: 60vh;" class="d-flex align-items-center">
         <div class="container">
             <div class="row justify-content-center">
@@ -41,13 +43,18 @@
         </div>
     </section>
 
+    <!-- available hours -->
     <section class="d-flex align-items-center justify-content-center flex-wrap" id="available"  style="height: 35vh;">
     </section>
 
+    <hr>
+
+    <section>
+        <h1 class="text-center mt-5 mb-5">My reservations</h1>
+        <div class="d-flex align-items-center flex-column mt-5" id="reservations">
+        </div>
+    </section>
 </body>
-<script>
-    
-</script>
 
 <script src="./home.js"></script>
 <style>
@@ -59,6 +66,9 @@
     .check-btn:hover{
         background-color: #80b3fb;
         box-shadow: 0px 0px 20px #7eb4ff;
+    }
+    .logout:hover{
+        box-shadow: 0px 0px 10px #9c9c9c;
     }
 </style>
 </html>

@@ -38,6 +38,14 @@ class reservation extends Controller
         $this->model->reserve();
     }
 
+    public function getuserreservation(){
+        $this->model = $this->model('reservation_mdl');
+        $data = json_decode(file_get_contents("php://input"));
+        $this->model->uuid = $data->uuid;
+        $data = $this->model->getuserreservation();
+        echo json_encode($data);
+    }
+
     public function update()
     {
         $this->model = $this->model('reservation_mdl');

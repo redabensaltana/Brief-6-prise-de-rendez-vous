@@ -9,7 +9,7 @@ if (idex == "null") {
 
 var uuid = document.querySelector(".uuid");
 var reservations = document.getElementById('reservations');
-var available = document.getElementById("available");
+var available = document.getElementById('available');
 
 uuid.textContent += window.localStorage.getItem("uuid");
 var uuid_local = window.localStorage.getItem("uuid");
@@ -27,15 +27,21 @@ var available_slots = [];
 
 //*------------------------------------------------
 function getavailable() {
+
+available_slots = [];
+
+  document.getElementById('available').innerHTML ='';
+
   var date = document.getElementById("date").value;
-    // available.innerHTML = ""; //?notworking
+  
+
 
   if (date == "") {
     alert("date needed !");
   } else {
     var data = {
       date: date,
-    };  
+    };
 
     const options = {
       method: "POST",
@@ -56,15 +62,16 @@ function getavailable() {
           }  
         });  
         if(available_slots.length == 0){
-            available.innerHTML = `<h3>NOT FOUND</h3>`;
+            available.innerHTML = `<h3>Unfortunately the day you choosed is full</h3>`;
         }    
+
         available_slots.forEach((slot) => {
           available.innerHTML += `
             <div class="bg-light mx-4 py-3 rounded">
             <p style="font-weight: bold;" class="d-flex justify-content-center align-items-center">${slot}</p>
             <button style="font-weight: 500; background-color: rgb(117, 218, 169);" class="btn mx-3" data-uuid="${uuid_local}" data-slot="${slot}" data-date="${date}" onclick="reserve(this)">reserve</button>
            </div>`; 
-        });   
+        });
       });  
   }    
 }  
@@ -110,7 +117,7 @@ function cancel(el){
 
   fetch("http://localhost/rondevo/public/reservation/cancel",
    options)
-   showreservations();
+  //  showreservations();
 }
 
 //*--------------show reservations--------------
